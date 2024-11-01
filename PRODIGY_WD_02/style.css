@@ -1,0 +1,162 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    z-index: 10;
+    background: #1c1c1c;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00e0ff;
+    text-shadow: 0 0 10px #00e0ff, 0 0 20px #00e0ff;
+}
+
+#time-display {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #ff77ff;
+    text-shadow: 0 0 10px #ff77ff, 0 0 20px #ff77ff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    background: #333;
+    color: #00e0ff;
+    border: 2px solid #00e0ff;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    flex: 1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff;
+}
+
+.btn:hover {
+    background-color: #00e0ff;
+    color: #333;
+    box-shadow: 0 0 10px #00e0ff, 0 0 20px #00e0ff;
+}
+
+.lap-container {
+    margin-top: 1.5rem;
+    background: #1c1c1c;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 119, 255, 0.3), 0 0 40px rgba(255, 119, 255, 0.2);
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #ff77ff;
+    text-shadow: 0 0 10px #ff77ff, 0 0 20px #ff77ff;
+    margin-bottom: 10px;
+}
+
+#laps {
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+}
+
+#laps li {
+    background: #333;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #00e0ff;
+    text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Scrollbar styling for lap times */
+#laps::-webkit-scrollbar {
+    width: 5px;
+}
+
+#laps::-webkit-scrollbar-thumb {
+    background-color: #00e0ff;
+    border-radius: 10px;
+}
+
+/* Floating Watches Background */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.watch {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 255, 255, 0.2);
+    border-radius: 50%;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Positioning and Sizing of Watches */
+.watch:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.watch:nth-child(2) { top: 50%; left: 10%; animation-delay: 1s; }
+.watch:nth-child(3) { top: 20%; left: 80%; animation-delay: 2s; }
+.watch:nth-child(4) { top: 80%; left: 70%; animation-delay: 3s; }
+.watch:nth-child(5) { top: 60%; left: 50%; animation-delay: 4s; }
+.watch:nth-child(6) { top: 30%; left: 60%; animation-delay: 5s; }
+.watch:nth-child(7) { top: 70%; left: 20%; animation-delay: 6s; }
+.watch:nth-child(8) { top: 90%; left: 40%; animation-delay: 7s; }
+.watch:nth-child(9) { top: 40%; left: 90%; animation-delay: 8s; }
+.watch:nth-child(10) { top: 20%; left: 30%; animation-delay: 9s; }
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #time-display {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}
